@@ -5,14 +5,16 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mkyong.junit5</groupId>
-    <artifactId>junit-examples</artifactId>
+    <groupId>com.mkyong.core</groupId>
+    <artifactId>junit5-maven</artifactId>
     <version>1.0</version>
 
     <properties>
         <java.version>1.8</java.version>
-        <junit-jupiter.version>5.3.2</junit-jupiter.version>
-        <mockito.version>2.24.0</mockito.version>
+        <junit-jupiter.version>5.5.2</junit-jupiter.version>
+        <!--
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        -->
     </properties>
 
     <dependencies>
@@ -25,27 +27,51 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- mockito + junit 5 -->
-        <!-- exclude this, mockito still ok with junit 5, why need this? -->
-        <!--
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
-        </dependency>
-        -->
-
     </dependencies>
 
     <build>
         <plugins>
-          
+
+            <!-- Need at least 2.22.0 to support JUnit 5
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
             </plugin>
+            -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.8.2</version>
+            </plugin>
+            -->
 
         </plugins>
     </build>
