@@ -12,14 +12,11 @@
     <properties>
         <java.version>1.8</java.version>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
-        <!--
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        -->
     </properties>
 
     <dependencies>
 
-        <!-- junit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -32,14 +29,7 @@
     <build>
         <plugins>
 
-            <!-- Need at least 2.22.0 to support JUnit 5
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.0</version>
-            </plugin>
-            -->
-
+            <!-- Need at least 2.22.0 to support JUnit 5 platform -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -56,6 +46,13 @@
                 </configuration>
             </plugin>
 
+            <!-- optional, for mvn site -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.8.2</version>
+            </plugin>
+
             <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -65,15 +62,19 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.8.2</version>
-            </plugin>
             -->
 
         </plugins>
     </build>
+
+    <!-- optional, add surefire report into the mvn site -->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>
