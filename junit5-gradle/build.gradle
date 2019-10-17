@@ -1,17 +1,27 @@
 plugins {
-	id 'java'
-	id 'eclipse' // optional, for Eclipse project
-	id 'idea'	 // optional, for IntelliJ IDEA project
+    id 'java'
+    id 'eclipse' // optional, for Eclipse project
+    id 'idea'     // optional, for IntelliJ IDEA project
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
+
+/* enable preview feature
+tasks.withType(JavaCompile).each {
+	it.options.compilerArgs.add('--enable-preview')
+}
+
+test {
+    jvmArgs(['--enable-preview'])
+}
+*/
