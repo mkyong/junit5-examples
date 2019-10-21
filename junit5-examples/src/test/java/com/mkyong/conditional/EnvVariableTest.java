@@ -1,8 +1,8 @@
 package com.mkyong.conditional;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
-import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 
 import java.util.Map;
@@ -28,6 +28,7 @@ public class EnvVariableTest {
         System.out.println("Do not run this if env variables 'CURRENT_ENV' matches .*development.* ");
     }
 
+    @Disabled("print environment variables.")
     @Test
     void printEnvironmentProperties() {
         Map<String, String> env = System.getenv();

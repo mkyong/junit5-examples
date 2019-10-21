@@ -1,5 +1,6 @@
 package com.mkyong.conditional;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
@@ -21,6 +22,7 @@ public class SystemPropertyTest {
         System.out.println("Do not run this on country code MY");
     }
 
+    @Disabled("print system properties.")
     @Test
     void printSystemProperties() {
         Properties properties = System.getProperties();

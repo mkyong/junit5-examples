@@ -72,7 +72,7 @@
         </plugins>
     </build>
 
-    <!-- optional, add surefire report into the mvn site -->
+    <!-- optional, add surefire report into the mvn site
     <reporting>
         <plugins>
             <plugin>
@@ -81,5 +81,6 @@
             </plugin>
         </plugins>
     </reporting>
+    -->
 
 </project>
