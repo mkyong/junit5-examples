@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'eclipse' // optional, for Eclipse project
+	id 'idea'	 // optional, for IntelliJ IDEA project
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+}
+
+test {
+
+	useJUnitPlatform()
+
+	/*useJUnitPlatform{
+		includeTags 'integration', 'feature-168'
+		excludeTags 'slow'
+	}*/
+
+	// enable test logging
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+
+}
+
+//https://github.com/gradle/gradle/issues/6172#issuecomment-409883128
+/*task slowTest(type: Test) {
+	useJUnitPlatform {
+		includeTags 'slow'
+	}
+
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}*/
+
+//Gradle is not working with Java 13
+//https://github.com/gradle/gradle/issues/8681
