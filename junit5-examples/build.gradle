@@ -26,6 +26,10 @@ test {
 		events "passed", "skipped", "failed"
 	}
 
+	systemProperties = [
+			'junit.jupiter.execution.order.random.seed': 99
+	]
+
 }
 
 //https://github.com/gradle/gradle/issues/6172#issuecomment-409883128

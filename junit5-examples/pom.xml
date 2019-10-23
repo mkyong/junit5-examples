@@ -28,6 +28,20 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Parameterized Tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -42,6 +56,15 @@
                 <configuration>
                     <groups>integration, feature-168</groups>
                     <excludedGroups>slow</excludedGroups>
+                </configuration>
+                -->
+                <!--
+                <configuration>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.execution.order.random.seed=99
+                        </configurationParameters>
+                    </properties>
                 </configuration>
                 -->
             </plugin>
