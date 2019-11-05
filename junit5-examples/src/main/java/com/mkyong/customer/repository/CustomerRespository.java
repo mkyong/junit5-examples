@@ -4,7 +4,8 @@ import com.mkyong.customer.model.Customer;
 
 import java.util.List;
 
-public interface CustomerRepository {
+public interface CustomerRespository {
+
     List<Customer> findAll();
 
     Customer findOne(Long id);

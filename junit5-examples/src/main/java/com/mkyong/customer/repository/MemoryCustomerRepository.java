@@ -5,7 +5,7 @@ import com.mkyong.customer.model.Customer;
 import java.util.Arrays;
 import java.util.List;
 
-public class MemoryCustomerRepository implements CustomerRepository {
+public class MemoryCustomerRepository implements CustomerRespository {
 
     private static List<Customer> DATA = Arrays.asList(
             new Customer(1L, "mkyong", 38),
